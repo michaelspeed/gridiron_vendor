@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vendor_flutter/app_theme.dart';
+import 'package:vendor_flutter/pages/orderLine/order_line.dart';
 
 class ListItem extends StatefulWidget {
   String title;
   String subtitle;
   String id;
+  dynamic data;
 
-  ListItem({Key key, this.title, this.subtitle, this.id}): super(key: key);
+  ListItem({Key key, this.title, this.subtitle, this.id, this.data}): super(key: key);
 
   @override
   _ListItemState createState() => _ListItemState();
@@ -18,7 +20,10 @@ class _ListItemState extends State<ListItem> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Container(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => OrderLinePage(id: widget.id)));
+      },
+      child: Card(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
@@ -30,11 +35,11 @@ class _ListItemState extends State<ListItem> {
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(widget.title, style: GoogleFonts.nunito(
-                      fontSize: 15, fontWeight: FontWeight.bold, color: AppTheme.darkerText
+                  Text(widget.title, style: GoogleFonts.poppins(
+                      fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.darkerText
                   )),
-                  Text(widget.subtitle, style: GoogleFonts.nunito(
-                      fontSize: 10, fontWeight: FontWeight.normal, color: AppTheme.darkerText
+                  Text("${widget.subtitle} - ${widget.data["stage"]}", style: GoogleFonts.poppins(
+                      fontSize: 13, fontWeight: FontWeight.normal, color: AppTheme.darkerText
                   )),
                 ],
               ),

@@ -22,9 +22,9 @@ class AppTheme {
   static const Color spacer = Color(0xFFF2F2F2);
 
 
-  static const Color primaryColor = Color(0xFF3FCB6F);
-  static const Color primaryAccent = Color(0xFF30A259);
-  static const Color secondaryColor = Color(0xFF30A259);
+  static const Color primaryColor = Color(0xFF8E97FD);
+  static const Color primaryAccent = Color(0xFFC4B5FD);
+  static const Color secondaryColor = Color(0xFF6D28D9);
   static const Color secondaryAccent = Color(0xFF0E3D22);
   static const String fontName = 'Roboto';
 

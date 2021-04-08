@@ -1,0 +1,15 @@
+{
+  "name": "GridIron Schema",
+  "schemaPath": "lib/gql/schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://megatron.assammart.shop",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

@@ -16,11 +16,12 @@ class _AgreementsState extends State<Agreements> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Padding(
           padding: const EdgeInsets.only(bottom: 10),
-          child: Container(
-            decoration: BoxDecoration(
+          child: Card(
+            color: Colors.blueGrey.shade50,
+            /*decoration: BoxDecoration(
               color: Colors.blueGrey.shade50,
               borderRadius: BorderRadius.circular(12),
-            ),
+            ),*/
             child:Column(
               children: [
                 Padding(
@@ -28,20 +29,10 @@ class _AgreementsState extends State<Agreements> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                          decoration: BoxDecoration(
-                              color: AppTheme.primaryColor,
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Text("Agreements", style: GoogleFonts.nunito(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.white)),
-                          )
-                      ),
+                      Chip(label: Text("Agreements", style: GoogleFonts.poppins(color: Colors.white)), backgroundColor: AppTheme.primaryColor),
                     ],
                   ),
                 ),
-                ListItem(title: "Agreement 1", subtitle: "subtitle 1", id: "1")
               ],
             ),
           ),
